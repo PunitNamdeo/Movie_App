@@ -1,0 +1,48 @@
+<h4 class="search-label">Movie Search</h4>
+<div class="container" id="search-component">
+  <div class="search-bar">
+    <input class="search" placeholder="Search..." #searchBox id="search-box" autofocus="true"/>
+    <span class="button">
+      <button mat-button class="submit-button" (click)="searchMovies(searchBox.value)">Submit</button>
+    </span>
+  </div>
+
+  <div *ngIf="movieFound">
+
+    <div class="media movie-media">
+      <div class="media-left">
+        <a>
+          <img class="media-object" src="{{moviePoster}}" alt="{{movie.Title}}">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">
+          {{movie.Title}} , {{movie.Year}} <br>
+          Rated: {{movie.Rated}} , Released: {{movie.Released}}
+        </h4>
+        <h5>Runtime: {{movie.Runtime}} , Language: {{movie.Language}} </h5>
+        <p>
+          Genre: {{movie.Genre}}
+        </p>
+        <p>Director: {{movie.Director}} , Writer: {{movie.writer}}</p>
+        <p>
+          Actors: {{movie.Actors}}
+        </p>
+        <p>
+          Summary: <app-read-more text="{{movie.Plot}}" maxLength="100" showToggleButton="true"></app-read-more>
+        </p>
+        <h5>Awards: {{movie.Awards}}</h5>
+        <h5>IMDB Rating: {{movie.imdbRating}} , IMDB Votes: {{movie.imdbVotes}}</h5>
+      </div>
+      <h6>Other Ratings</h6>
+      <ul *ngIf="movie.Ratings" style="list-style-type:none">
+      <li *ngFor="let ratings of movie.Ratings">{{ratings.Source}}: {{ratings.Value}}</li>
+    </ul>
+    </div>
+  </div>
+  <div *ngIf="!movieFound">
+    {{message}}
+  </div>
+
+
+</div>

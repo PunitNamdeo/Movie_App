@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.main-container {
+  text-align:center;
+}
+.container {
+    background: lightblue;
+}
+
+img {
+margin: 20px;
+}
+
+a {
+font-weight: bold;
+}
+
+.search {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 20px;
+  font: 1.5em 'Arimo', sans-serif;
+  width: 50%;
+  outline: none;
+  transition: border 0.5s ease-in-out;
+}
+.search:focus {
+  border-color : rgba(81, 203, 238, 1);
+}
+.submit-button {
+  margin:0 0 15px 10px !important;
+}
+mat-grid-tile {
+  background: lightblue;
+}
+
